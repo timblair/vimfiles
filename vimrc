@@ -5,8 +5,8 @@ call pathogen#runtime_append_all_bundles()
 " it's 201x people: use Vim settings, rather then Vi
 set nocompatible
 
-" shift the leader key somewhere nicer
-let mapleader = ","
+" normal map leader
+let mapleader = "\\"
 
 " general settings
 colorscheme ir_black " change colorscheme
@@ -27,10 +27,14 @@ set visualbell
 set cursorline
 set ttyfast
 set ruler
-set relativenumber
-set undofile
 set nowrap
 set hidden " allow easy (unsaved) hidden buffers
+
+" code folding
+set foldmethod=indent   " fold based on the indent level
+set foldnestmax=10      " deepest fold is 10 levels
+set nofoldenable        " don't fold by default
+set foldlevel=1
 
 " arrow keys are banned
 nnoremap <up> <nop>
@@ -52,6 +56,26 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" Mac-standard tab navigation
+map <D-S-]> gt
+map <D-S-[> gT
+map <D-1> 1gt
+map <D-2> 2gt
+map <D-3> 3gt
+map <D-4> 4gt
+map <D-5> 5gt
+map <D-6> 6gt
+map <D-7> 7gt
+map <D-8> 8gt
+map <D-9> 9gt
+map <D-0> :tablast<CR>
+
+" shortcuts for opening files relative to the current open file
+map <leader>ew :e <C-R>=expand("%:p:h") . "/" <CR>
+map <leader>es :sp <C-R>=expand("%:p:h") . "/" <CR>
+map <leader>ev :vsp <C-R>=expand("%:p:h") . "/" <CR>
+map <leader>et :tabe <C-R>=expand("%:p:h") . "/" <CR>
+
 " status line settings
 set statusline=%f " tail of the filename
 set statusline+=\ [%c\,%l/%L]  " cursor column , cursor line / total lines
@@ -60,7 +84,7 @@ set laststatus=2
 
 " various GUI options
 set guioptions-=T " remove the toolbar
-set guifont=Menlo:h12
+set guifont=Menlo:h10
 set linespace=2 " add a little linespace for readability
 
 " shortcut to show invisibles (tabs, carriage returns)
@@ -96,6 +120,14 @@ endif
 " clear backups and swaps out of the working directory
 set backupdir=~/.vim/tmp//
 set directory=~/.vim/tmp//
+
+" newer vim settings
+if has("gui_running")
+  set relativenumber
+  " persistent undo files storage
+  set undofile
+  set undodir=~/.vim/tmp//
+endif
 
 " NERDTree ********************************************************************
 :noremap <Leader>n :NERDTreeToggle<CR>
