@@ -28,3 +28,6 @@
 [submodule "bundle/minibufexplorerpp"]
 	path = bundle/minibufexplorerpp
 	url = git://github.com/vim-scripts/minibufexplorerpp.git
+[submodule "bundle/command-t"]
+	path = bundle/command-t
+	url = git://git.wincent.com/command-t.git

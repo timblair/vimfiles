@@ -1,5 +1,7 @@
 " pathogen setup
+filetype on " if filetype is already off, turning it off throws an error
 filetype off
+filetype plugin indent on
 call pathogen#runtime_append_all_bundles()
 
 " it's 201x people: use Vim settings, rather then Vi
@@ -9,7 +11,9 @@ set nocompatible
 let mapleader = "\\"
 
 " general settings
-colorscheme ir_black " change colorscheme
+"colorscheme ir_black " change colorscheme
+set background=dark
+colorscheme solarized " change colorscheme
 syntax on " syntax highlighting on by default
 set number " turn on line numbers
 set backspace=indent,eol,start " allow backspacing over everything in insert mode
@@ -129,6 +133,9 @@ if has("gui_running")
   set undodir=~/.vim/tmp//
 endif
 
+" Load matchit (% to bounce from do to end, etc.)
+runtime! macros/matchit.vim
+
 " NERDTree ********************************************************************
 :noremap <Leader>n :NERDTreeToggle<CR>
 let NERDTreeHijackNetrw=1 " User instead of Netrw when doing an edit /foobar
@@ -136,4 +143,29 @@ let NERDTreeMouseMode=1 " Single click for everything
 
 " Ack *************************************************************************
 map <leader>a :Ack
+
+" Filetype specifics **********************************************************
+augroup myfiletypes
+  autocmd!
+  autocmd FileType ruby,eruby,yaml set ai sw=2 sts=2 et
+augroup END
+
+" Solarized colour scheme ****************************************************
+function! ToggleBackground()
+  if (g:solarized_style=="dark")
+    let g:solarized_style="light"
+    colorscheme solarized
+  else
+    let g:solarized_style="dark"
+    colorscheme solarized
+  endif
+endfunction
+command! Togbg call ToggleBackground()
+nnoremap <F5> :call ToggleBackground()<CR>
+inoremap <F5> <ESC>:call ToggleBackground()<CR>a
+vnoremap <F5> <ESC>:call ToggleBackground()<CR>
+
+" Pathogen *******************************************************************
+" reload Pathogen bundles
+nnoremap <leader>p :call pathogen#runtime_append_all_bundles()<cr>
 
