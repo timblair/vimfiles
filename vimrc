@@ -133,6 +133,11 @@ if has("gui_running")
   set undodir=~/.vim/tmp//
 endif
 
+" use F2 to toggle auto-indenting for code pasting
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
+
 " Load matchit (% to bounce from do to end, etc.)
 runtime! macros/matchit.vim
 
@@ -165,7 +170,6 @@ nnoremap <F5> :call ToggleBackground()<CR>
 inoremap <F5> <ESC>:call ToggleBackground()<CR>a
 vnoremap <F5> <ESC>:call ToggleBackground()<CR>
 
-" Pathogen *******************************************************************
-" reload Pathogen bundles
-nnoremap <leader>p :call pathogen#runtime_append_all_bundles()<cr>
-
+" Scratch *********************************************************************
+map <leader>s :Scratch<CR>
+map <leader>S :Sscratch<CR>
