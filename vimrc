@@ -173,3 +173,6 @@ vnoremap <F5> <ESC>:call ToggleBackground()<CR>
 " Scratch *********************************************************************
 map <leader>s :Scratch<CR>
 map <leader>S :Sscratch<CR>
+
+" Markdown preview
+map <leader>m <ESC>:w!<CR>:!markit % > /tmp/%.html && open /tmp/%.html<CR><CR>
