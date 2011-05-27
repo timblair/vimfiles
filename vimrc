@@ -78,6 +78,10 @@ map <D-0> :tablast<CR>
 map H ^
 map L $
 
+" One less key-press for entering colon-command mode
+nmap <Space> :
+vmap <Space> :
+
 " shortcuts for opening files relative to the current open file
 map <leader>ew :e <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>es :sp <C-R>=expand("%:p:h") . "/" <CR>
