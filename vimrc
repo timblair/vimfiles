@@ -74,6 +74,10 @@ map <D-8> 8gt
 map <D-9> 9gt
 map <D-0> :tablast<CR>
 
+" Easier shortcuts for jumping to beginning/end of line
+map H ^
+map L $
+
 " shortcuts for opening files relative to the current open file
 map <leader>ew :e <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>es :sp <C-R>=expand("%:p:h") . "/" <CR>
