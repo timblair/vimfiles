@@ -149,6 +149,12 @@ set showmode
 " Load matchit (% to bounce from do to end, etc.)
 runtime! macros/matchit.vim
 
+"Move a line of text using Comamnd+[jk] on mac
+nmap <D-j> mz:m+<cr>`z
+nmap <D-k> mz:m-2<cr>`z
+vmap <D-j> :m'>+<cr>`<my`>mzgv`yo`z
+vmap <D-k> :m'<-2<cr>`>my`<mzgv`yo`z
+
 " NERDTree ********************************************************************
 :noremap <Leader>n :NERDTreeToggle<CR>
 let NERDTreeHijackNetrw=1 " User instead of Netrw when doing an edit /foobar
