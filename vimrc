@@ -189,4 +189,4 @@ map <leader>s :Scratch<CR>
 map <leader>S :Sscratch<CR>
 
 " Markdown preview
-map <leader>m <ESC>:w!<CR>:!markit % > /tmp/%.html && open /tmp/%.html<CR><CR>
+map <leader>m <ESC>:w!<CR>:!markit % > /tmp/%:t.html && open /tmp/%:t.html<CR><CR>
