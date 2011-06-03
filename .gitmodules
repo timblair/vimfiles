@@ -49,3 +49,6 @@
 [submodule "bundle/vim-addon-mw-utils"]
 	path = bundle/vim-addon-mw-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
+[submodule "bundle/vim-fugative"]
+	path = bundle/vim-fugative
+	url = https://github.com/tpope/vim-fugitive.git
