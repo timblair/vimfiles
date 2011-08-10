@@ -148,6 +148,8 @@ if has("gui_running")
   " persistent undo files storage
   set undofile
   set undodir=~/.vim/tmp//
+  " make full screen mode actually go full screen
+  set fuopt=maxvert,maxhorz
 endif
 
 " use F2 to toggle auto-indenting for code pasting
@@ -175,7 +177,8 @@ map <leader>a :Ack
 " Filetype specifics **********************************************************
 augroup myfiletypes
   autocmd!
-  autocmd FileType ruby,eruby,yaml set ai sw=2 sts=2 et
+  autocmd FileType ruby,eruby,yaml,mkd set ai sw=2 sts=2 et
+  autocmd BufNewFile,BufReadPost *.md set filetype=mkd
 augroup END
 
 " Solarized colour scheme ****************************************************
