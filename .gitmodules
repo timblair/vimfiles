@@ -52,3 +52,9 @@
 [submodule "bundle/vim-fugative"]
 	path = bundle/vim-fugative
 	url = https://github.com/tpope/vim-fugitive.git
+[submodule "bundle/vim-fuzzyfinder"]
+	path = bundle/vim-fuzzyfinder
+	url = https://github.com/oppara/vim-fuzzyfinder.git
+[submodule "bundle/vim-l9"]
+	path = bundle/vim-l9
+	url = https://github.com/slack/vim-l9.git
