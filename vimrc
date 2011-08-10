@@ -34,6 +34,15 @@ set ruler
 set nowrap
 set hidden " allow easy (unsaved) hidden buffers
 
+" visual indicator to keep lines short
+if exists('+colorcolumn')
+  " highlight the 80th column (only in 7.3+)
+  set colorcolumn=80
+else
+  " highlight any text that goes over 80 characters
+  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
+
 " code folding
 set foldmethod=indent   " fold based on the indent level
 set foldnestmax=10      " deepest fold is 10 levels
