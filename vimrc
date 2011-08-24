@@ -177,8 +177,8 @@ map <leader>a :Ack
 " Filetype specifics **********************************************************
 augroup myfiletypes
   autocmd!
-  autocmd FileType ruby,eruby,yaml,mkd set ai sw=2 sts=2 et
-  autocmd BufNewFile,BufReadPost *.md set filetype=mkd
+  autocmd FileType ruby,eruby,yaml,mkderb set ai sw=2 sts=2 et
+  autocmd BufNewFile,BufReadPost *.md set filetype=mkderb
 augroup END
 
 " Solarized colour scheme ****************************************************
