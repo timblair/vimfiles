@@ -193,3 +193,7 @@ map <leader>m <ESC>:w!<CR>:!markit % > /tmp/%:t.html && open /tmp/%:t.html<CR><C
 
 " Fuzzy finder help
 map <leader>h :FufHelp<CR>
+
+" NERD Commenter locals
+let NERDCommentWholeLinesInVMode=2
+map <C-C> <plug>NERDCommenterToggle
