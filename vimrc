@@ -198,3 +198,16 @@ map <leader>h :FufHelp<CR>
 " NERD Commenter locals
 let NERDCommentWholeLinesInVMode=2
 map <C-C> <plug>NERDCommenterToggle
+
+" Alternate way to switch to the buffer you just left (rahter than <C-6> which
+" is helpfully yoinked by OSX's Spaces when you have that many spaces open...
+map <C-a> :b#<CR>
+
+" Underline the current text line.
+nnoremap <leader>U yyp<c-v>$r=
+nnoremap <leader>u yyp<c-v>$r-
+
+" Don't line-wrap on words.
+set nolist
+set formatoptions=1
+set linebreak
