@@ -191,6 +191,8 @@ map <leader>S :Sscratch<CR>
 " Markdown preview
 map <leader>m <ESC>:w!<CR>:!markit % > /tmp/%:t.html<CR><CR>
 map <leader>M <ESC>:w!<CR>:!markit % > /tmp/%:t.html && open /tmp/%:t.html<CR><CR>
+" Load up the current file in Marked
+map <leader>om <ESC>:!open -a Marked %<CR><CR>
 
 " Fuzzy finder help
 map <leader>h :FufHelp<CR>
