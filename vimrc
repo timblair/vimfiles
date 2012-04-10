@@ -213,3 +213,7 @@ nnoremap <leader>u yyp<c-v>$r-
 set nolist
 set formatoptions=1
 set linebreak
+
+" Reselect visual block after indent/outdent
+vnoremap < <gv
+vnoremap > >gv
