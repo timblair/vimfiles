@@ -217,3 +217,6 @@ set linebreak
 " Reselect visual block after indent/outdent
 vnoremap < <gv
 vnoremap > >gv
+
+" Block wrap
+map <C-w> gwap
