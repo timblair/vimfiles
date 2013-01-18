@@ -1,5 +1,9 @@
 execute pathogen#infect()
 
+colorscheme solarized
+set background=dark
+call togglebg#map("<F5>")
+
 " visual indicator to keep lines short
 if exists('+colorcolumn')
   " highlight the 80th column (only in 7.3+)
