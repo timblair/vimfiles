@@ -10,3 +10,6 @@
 [submodule "bundle/vim-colors-solarized"]
 	path = bundle/vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "bundle/vim-minibuf-explorer-pp"]
+	path = bundle/vim-minibuf-explorer-pp
+	url = git://github.com/vim-scripts/minibufexplorerpp.git
