@@ -77,3 +77,9 @@ let NERDTreeMouseMode=1 " Single click for everything
 autocmd vimenter * if !argc() | NERDTree | endif
 " Close vim if NERDTree is the only window left open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" Fullscreening
+if has("gui_running")
+  set fuoptions=maxvert,maxhorz
+  map <C-f> :set fullscreen!<CR>
+endif
