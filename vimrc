@@ -83,3 +83,6 @@ if has("gui_running")
   set fuoptions=maxvert,maxhorz
   map <C-f> :set fullscreen!<CR>
 endif
+
+" Quick git-blame for the selected block
+vmap <Leader>g :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
