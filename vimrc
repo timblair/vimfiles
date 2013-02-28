@@ -71,6 +71,8 @@ nnoremap <C-l> <C-w>l
 
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
+let NERDTreeHijackNetrw=1 " User instead of Netrw when doing an edit /foobar
+let NERDTreeMouseMode=1 " Single click for everything
 " Open NERDTree by default if no files are specified
 autocmd vimenter * if !argc() | NERDTree | endif
 " Close vim if NERDTree is the only window left open
