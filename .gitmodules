@@ -13,3 +13,6 @@
 [submodule "bundle/vim-minibuf-explorer-pp"]
 	path = bundle/vim-minibuf-explorer-pp
 	url = git://github.com/vim-scripts/minibufexplorerpp.git
+[submodule "bundle/vim-nerdtree"]
+	path = bundle/vim-nerdtree
+	url = git://github.com/scrooloose/nerdtree.git

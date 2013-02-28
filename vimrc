@@ -69,8 +69,9 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" file explorer settings
-let g:netrw_liststyle=3     " Use tree-mode as default view
-let g:netrw_browse_split=4  " Open file in previous buffer
-let g:netrw_preview=1       " Preview window shown in a vertically split
-let g:netrw_winsize=20      " Set file browser to use 20% width
+" NERDTree
+map <C-n> :NERDTreeToggle<CR>
+" Open NERDTree by default if no files are specified
+autocmd vimenter * if !argc() | NERDTree | endif
+" Close vim if NERDTree is the only window left open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
