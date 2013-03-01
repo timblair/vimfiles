@@ -1,7 +1,8 @@
 execute pathogen#infect()
 
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
+set expandtab
 set cursorline
 set nowrap
 set visualbell
