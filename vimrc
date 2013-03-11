@@ -13,6 +13,8 @@ set number
 let base16colorspace=256
 colorscheme base16-default
 set background=dark
+" Base16 doesn't define a nice background colour for the sign column
+autocmd ColorScheme * highlight SignColumn guibg=NONE ctermbg=NONE
 
 " visual indicator to keep lines short
 if exists('+colorcolumn')
