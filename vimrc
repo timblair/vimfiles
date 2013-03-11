@@ -111,3 +111,7 @@ if exists(":Tabularize")
   nmap <Leader>a\| :Tabularize /\|<CR>
   vmap <Leader>a\| :Tabularize /\<CR>
 endif
+
+let NERDCommentWholeLinesInVMode=2
+nmap <C-C> <plug>NERDCommenterToggle
+vmap <C-C> <plug>NERDCommenterToggle
