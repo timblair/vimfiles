@@ -101,7 +101,7 @@ vmap <Leader>g :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'
 " Open .vimrc for editing in a new tab
 nmap <leader>v :tabedit $MYVIMRC<CR>
 " Source the vimrc file after saving it
-autocmd bufwritepost .vimrc source $MYVIMRC
+autocmd bufwritepost vimrc source $MYVIMRC
 
 if exists(":Tabularize")
   nmap <Leader>a= :Tabularize /=<CR>
