@@ -7,9 +7,6 @@
 [submodule "bundle/vim-rooter"]
 	path = bundle/vim-rooter
 	url = git://github.com/airblade/vim-rooter.git
-[submodule "bundle/vim-colors-solarized"]
-	path = bundle/vim-colors-solarized
-	url = git://github.com/altercation/vim-colors-solarized.git
 [submodule "bundle/vim-minibuf-explorer-pp"]
 	path = bundle/vim-minibuf-explorer-pp
 	url = git://github.com/vim-scripts/minibufexplorerpp.git
@@ -25,3 +22,6 @@
 [submodule "bundle/vim-supertab"]
 	path = bundle/vim-supertab
 	url = git://github.com/ervandew/supertab.git
+[submodule "bundle/vim-base16"]
+	path = bundle/vim-base16
+	url = git://github.com/chriskempson/base16-vim.git

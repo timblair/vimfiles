@@ -8,10 +8,11 @@ set nowrap
 set visualbell
 set number
 
-let g:solarized_termcolors=256
-colorscheme solarized
+" Make sure terminal is running with modified Base16 colours:
+" https://raw.github.com/chriskempson/base16-shell/master/base16-default.dark.sh
+let base16colorspace=256
+colorscheme base16-default
 set background=dark
-call togglebg#map("<F5>")
 
 " visual indicator to keep lines short
 if exists('+colorcolumn')
@@ -44,7 +45,7 @@ set statusline +=\ [%v\,%l/%L]  " cursor column , cursor line / total lines
 
 " various GUI options
 set guioptions-=T " remove the toolbar
-set guifont=Source_Code_Pro:h10
+set guifont=Monaco:h10
 set linespace=-1
 
 " shortcut to show invisibles (tabs, carriage returns)
