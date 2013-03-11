@@ -73,6 +73,10 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" Turn off auto-commenting (i.e. type a comment, press return, the new line is
+" no longer automatically commented)
+autocmd FileType * setlocal formatoptions-=ro
+
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeHijackNetrw=1 " User instead of Netrw when doing an edit /foobar
