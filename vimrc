@@ -97,3 +97,8 @@ endif
 
 " Quick git-blame for the selected block
 vmap <Leader>g :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
+
+" Open .vimrc for editing in a new tab
+nmap <leader>v :tabedit $MYVIMRC<CR>
+" Source the vimrc file after saving it
+autocmd bufwritepost .vimrc source $MYVIMRC
