@@ -73,6 +73,9 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" Specific indentation settings for ColdFusion
+autocmd FileType cf set ai sw=4 ts=4 sts=4 noet
+
 " Turn off auto-commenting (i.e. type a comment, press return, the new line is
 " no longer automatically commented)
 autocmd FileType * setlocal formatoptions-=ro
