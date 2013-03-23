@@ -47,8 +47,8 @@ set statusline +=\ [%v\,%l/%L]  " cursor column , cursor line / total lines
 
 " various GUI options
 set guioptions-=T " remove the toolbar
-set guifont=Monaco:h10
-set linespace=-1
+set guifont=Inconsolata\ for\ Powerline:h12
+set linespace=0
 
 " shortcut to show invisibles (tabs, carriage returns)
 nmap <leader>i :set list!<CR>
@@ -115,3 +115,6 @@ endif
 let NERDCommentWholeLinesInVMode=2
 nmap <C-C> <plug>NERDCommenterToggle
 vmap <C-C> <plug>NERDCommenterToggle
+
+" Powerline installation directory: https://github.com/Lokaltog/powerline
+set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim
