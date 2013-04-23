@@ -67,6 +67,9 @@ map <C-a> :b#<CR>
 vnoremap < <gv
 vnoremap > >gv
 
+" Open splits below / right
+set splitbelow
+set splitright
 
 " quickly move around splits
 nnoremap <C-h> <C-w>h
