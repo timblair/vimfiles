@@ -67,8 +67,6 @@ map <C-a> :b#<CR>
 vnoremap < <gv
 vnoremap > >gv
 
-" Block wrap
-map <C-w> gwap
 
 " quickly move around splits
 nnoremap <C-h> <C-w>h
