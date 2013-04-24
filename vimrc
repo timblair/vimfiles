@@ -122,3 +122,6 @@ vmap <C-C> <plug>NERDCommenterToggle
 
 " Powerline installation directory: https://github.com/Lokaltog/powerline
 set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim
+
+" Use unnamed register for integration with OS X clipboard
+set clipboard=unnamed
