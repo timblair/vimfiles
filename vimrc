@@ -127,3 +127,6 @@ set clipboard=unnamed
 
 " Only run git-gutter on file read/write, not buffer/tab/focus change
 let g:gitgutter_eager=0
+
+" Pretty-print a JSON file
+nmap <Leader>j :%!python -mjson.tool
