@@ -37,3 +37,6 @@
 [submodule "bundle/vim-rails"]
 	path = bundle/vim-rails
 	url = git://github.com/tpope/vim-rails.git
+[submodule "bundle/vim-minibufexpl"]
+	path = bundle/vim-minibufexpl
+	url = git://github.com/fholgado/minibufexpl.vim.git
