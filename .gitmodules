@@ -40,3 +40,6 @@
 [submodule "bundle/vim-minibufexpl"]
 	path = bundle/vim-minibufexpl
 	url = git://github.com/fholgado/minibufexpl.vim.git
+[submodule "bundle/cf-utils"]
+	path = bundle/cf-utils
+	url = git://github.com/davejlong/cf-utils.vim.git
