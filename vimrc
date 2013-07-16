@@ -132,3 +132,7 @@ let g:gitgutter_eager=0
 
 " Pretty-print a JSON file
 nmap <Leader>j :%!python -mjson.tool
+
+" Shortcut Fugitive's Gbrowse support
+nmap <Leader>b :Gbrowse<CR>
+vmap <Leader>b :Gbrowse<CR>
