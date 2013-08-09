@@ -138,3 +138,20 @@ nmap <Leader>j :%!python -mjson.tool
 " Shortcut Fugitive's Gbrowse support
 nmap <Leader>b :Gbrowse<CR>
 vmap <Leader>b :Gbrowse<CR>
+
+" Set swap, backup and undo dirs
+let s:dir = '~/Library/Vim'
+if isdirectory(expand(s:dir))
+  if &directory =~# '^\.,'
+    let &directory = expand(s:dir) . '/swap//,' . &directory
+  endif
+  if &backupdir =~# '^\.,'
+    let &backupdir = expand(s:dir) . '/backup//,' . &backupdir
+  endif
+  if exists('+undodir') && &undodir =~# '^\.\%(,\|$\)'
+    let &undodir = expand(s:dir) . '/undo//,' . &undodir
+  endif
+endif
+if exists('+undofile')
+  set undofile
+endif
