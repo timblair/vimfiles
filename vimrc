@@ -155,3 +155,6 @@ endif
 if exists('+undofile')
   set undofile
 endif
+
+" Set .md files as markdown
+autocmd BufNew,BufNewFile,BufRead *.md :setfiletype markdown
