@@ -43,3 +43,6 @@
 [submodule "bundle/cf-utils"]
 	path = bundle/cf-utils
 	url = git://github.com/davejlong/cf-utils.vim.git
+[submodule "bundle/vim-markdown"]
+	path = bundle/vim-markdown
+	url = git@github.com:tpope/vim-markdown.git
