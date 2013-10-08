@@ -130,6 +130,7 @@ set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim
 set clipboard=unnamed
 
 " Only run git-gutter on file read/write, not buffer/tab/focus change
+let g:gitgutter_realtime=0
 let g:gitgutter_eager=0
 
 " Pretty-print a JSON file
