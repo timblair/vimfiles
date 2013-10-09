@@ -156,3 +156,6 @@ endif
 if exists('+undofile')
   set undofile
 endif
+
+" Shortcut for stripping trailing whitespace
+nmap <Leader>w :%s/\s\+$<CR>
