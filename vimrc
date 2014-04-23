@@ -108,8 +108,8 @@ nmap <leader>v :tabedit $MYVIMRC<CR>
 autocmd bufwritepost vimrc source $MYVIMRC
 
 " Tabularize shortcuts
-nmap <Leader>a= :Tabularize /=<CR>
-vmap <Leader>a= :Tabularize /=<CR>
+nmap <Leader>a= :Tabularize /\zs[=<>/!]\@<!=[=<>/!]\@!.*/<CR>
+vmap <Leader>a= :Tabularize /\zs[=<>/!]\@<!=[=<>/!]\@!.*/<CR>
 nmap <Leader>a: :Tabularize /:\zs<CR>
 vmap <Leader>a: :Tabularize /:\zs<CR>
 nmap <Leader>a\| :Tabularize /\|<CR>
