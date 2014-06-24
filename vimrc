@@ -49,9 +49,12 @@ set statusline +=%F             " full file name and path
 set statusline +=\ [%v\,%l/%L]  " cursor column , cursor line / total lines
 
 " various GUI options
-set guioptions-=T " remove the toolbar
-set guifont=Inconsolata\ for\ Powerline:h12
-set linespace=0
+if has('gui_running')
+  set guioptions-=T " remove the toolbar
+  set guifont=Inconsolata-dz\ for\ Powerline:h12
+  let g:airline_powerline_fonts = 1
+  set linespace=-2
+endif
 
 " shortcut to show invisibles (tabs, carriage returns)
 nmap <leader>i :set list!<CR>
