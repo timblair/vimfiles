@@ -4,7 +4,7 @@
 # $ brew install macvim --env-std --override-system-vim
 #
 # Install font with Powerline patches:
-# https://github.com/Lokaltog/powerline-fonts/blob/master/Inconsolata/Inconsolata%20for%20Powerline.otf?raw=true
+# https://github.com/Lokaltog/powerline-fonts/blob/master/InconsolataDz/Inconsolata-dz%20for%20Powerline.otf?raw=true
 
 git clone git://github.com/timblair/vimfiles.git ~/.vim
 ln -s ~/.vim/vimrc ~/.vimrc && cd ~/.vim
@@ -15,4 +15,5 @@ else
   mkdir -p ~/.local/share/vim/{swap,backup,undo}
 fi
 
-git submodule init && git submodule update
+git submodule update --init --recursive
+(cd bundle/YouCompleteMe && ./install.sh)
