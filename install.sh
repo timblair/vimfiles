@@ -15,5 +15,4 @@ else
   mkdir -p ~/.local/share/vim/{swap,backup,undo}
 fi
 
-git submodule update --init --recursive
-(cd bundle/YouCompleteMe && ./install.sh)
+vim +PlugInstall +qall

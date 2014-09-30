@@ -1,4 +1,39 @@
-execute pathogen#infect()
+" Plugins managed by vim-plug
+" https://github.com/junegunn/vim-plug
+call plug#begin()
+
+Plug 'tpope/vim-sensible'       " start with a sensible set of defaults
+
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rails'
+Plug 'davejlong/cf-utils.vim'
+Plug 'tpope/vim-markdown'
+Plug 'fatih/vim-go'
+Plug 'elixir-lang/vim-elixir'
+
+Plug 'tpope/vim-fugitive'       " all the git things
+Plug 'airblade/vim-gitgutter'   " show git diff marks in the gutter
+Plug 'tpope/vim-endwise'        " correct insertion of 'end' block markers
+Plug 'airblade/vim-rooter'      " change working directory to project root
+Plug 'ervandew/supertab'        " use tab for all insert mode completions
+Plug 'fholgado/minibufexpl.vim' " easier buffer exploring
+Plug 'bling/vim-airline'        " better status/tabline
+Plug 'chriskempson/base16-vim'  " colour scheme
+Plug 'scrooloose/nerdcommenter' " simple block commenting
+
+Plug 'scrooloose/nerdtree',    { 'on': 'NERDTreeToggle' } " file explorer
+Plug 'godlygeek/tabular',      { 'on': 'Tabularize' }     " block alignment
+
+Plug 'Valloric/YouCompleteMe', { 'do': './install.sh', 'on': [] }
+augroup load_ycm  " only load YCM when entering insert mode for the first time
+  autocmd!
+  autocmd InsertEnter * call plug#load('YouCompleteMe')
+                     \| call youcompleteme#Enable()
+augroup END
+
+call plug#end()
+
+" ----------------------------------------------------------------------------
 
 set tabstop=2
 set shiftwidth=2
@@ -14,7 +49,7 @@ au FileType crontab set nobackup nowritebackup
 " Make sure terminal is running with modified Base16 colours:
 " https://raw.github.com/chriskempson/base16-shell/master/base16-default.dark.sh
 let base16colorspace=256
-colorscheme base16-default
+silent! colorscheme base16-default
 set background=dark
 " Base16 doesn't define a nice background colour for the sign column
 autocmd ColorScheme * highlight SignColumn guibg=NONE ctermbg=NONE
@@ -50,10 +85,12 @@ set statusline +=\ [%v\,%l/%L]  " cursor column , cursor line / total lines
 
 " various GUI options
 if has('gui_running')
-  set guioptions-=T " remove the toolbar
-  set guifont=Inconsolata-dz\ for\ Powerline:h12
-  let g:airline_powerline_fonts = 1
-  set linespace=-2
+  if system("uname") == "Darwin\n"
+    set guifont=Inconsolata-dz\ for\ Powerline:h12
+    let g:airline_powerline_fonts = 1
+    set guioptions-=T " remove the toolbar
+    set linespace=-2
+   endif
 endif
 
 " shortcut to show invisibles (tabs, carriage returns)
@@ -88,13 +125,20 @@ autocmd FileType cf set ai sw=4 ts=4 sts=4 noet
 autocmd FileType * setlocal formatoptions-=ro
 
 " NERDTree
-map <C-n> :NERDTreeToggle<CR>
-let NERDTreeHijackNetrw=1 " User instead of Netrw when doing an edit /foobar
+map <C-n> :NERDTreeToggle <CR>
+let NERDTreeHijackNetrw=1 " Use instead of Netrw when doing an edit /foobar
 let NERDTreeMouseMode=1 " Single click for everything
 " Open NERDTree by default if no files are specified
-autocmd vimenter * if !argc() | NERDTree | endif
+autocmd StdinReadPre * let s:std_in=1
+function! StartNERDTree()
+  if argc() == 0 && !exists("s:std_in")
+    execute ":NERDTree"
+    wincmd p
+  endif
+endfunction
+autocmd VimEnter * :call StartNERDTree()
 " Close vim if NERDTree is the only window left open
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " Fullscreening
 if has("gui_running")

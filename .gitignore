@@ -2,3 +2,5 @@
 *.swp
 .VimballRecord
 .netrwhist
+plugged/*
+autoload/plug.vim.old
