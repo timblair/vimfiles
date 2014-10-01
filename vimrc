@@ -26,9 +26,11 @@ Plug 'godlygeek/tabular',      { 'on': 'Tabularize' }     " block alignment
 
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh', 'on': [] }
 augroup load_ycm  " only load YCM when entering insert mode for the first time
-  autocmd!
-  autocmd InsertEnter * call plug#load('YouCompleteMe')
-                     \| call youcompleteme#Enable()
+  if (v:version > 703 || v:version == 703 && has('patch584')) && has('python')
+    autocmd!
+    autocmd InsertEnter * call plug#load('YouCompleteMe')
+                       \| call youcompleteme#Enable()
+  endif
 augroup END
 
 call plug#end()
