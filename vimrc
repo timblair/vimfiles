@@ -20,6 +20,7 @@ Plug 'fholgado/minibufexpl.vim' " easier buffer exploring
 Plug 'bling/vim-airline'        " better status/tabline
 Plug 'chriskempson/base16-vim'  " colour scheme
 Plug 'scrooloose/nerdcommenter' " simple block commenting
+Plug 'scrooloose/syntastic'     " syntax checking
 
 Plug 'scrooloose/nerdtree',    { 'on': 'NERDTreeToggle' } " file explorer
 Plug 'godlygeek/tabular',      { 'on': 'Tabularize' }     " block alignment
@@ -208,3 +209,19 @@ endif
 
 " Shortcut for stripping trailing whitespace
 nmap <Leader>w :%s/\s\+$<CR>
+
+" Syntastic configuration
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '!'
+
+function! ErrorLocToggle()
+  if exists("g:errors_win")
+    lclose
+    unlet g:errors_win
+  else
+    Errors
+    let g:errors_win = bufnr("$")
+  endif
+endfunction
+
+nmap <silent> <C-e> :call ErrorLocToggle()<CR>
