@@ -21,6 +21,7 @@ Plug 'bling/vim-airline'        " better status/tabline
 Plug 'chriskempson/base16-vim'  " colour scheme
 Plug 'scrooloose/nerdcommenter' " simple block commenting
 Plug 'scrooloose/syntastic'     " syntax checking
+Plug 'ctrlpvim/ctrlp.vim'       " file finding
 
 Plug 'scrooloose/nerdtree',    { 'on': 'NERDTreeToggle' } " file explorer
 Plug 'godlygeek/tabular',      { 'on': 'Tabularize' }     " block alignment
@@ -182,6 +183,9 @@ set clipboard=unnamed
 " Only run git-gutter on file read/write, not buffer/tab/focus change
 let g:gitgutter_realtime=0
 let g:gitgutter_eager=0
+
+" Use ctrl-t for file-finding
+let g:ctrlp_map = '<c-t>'
 
 " Pretty-print a JSON file
 nmap <Leader>j :%!python -mjson.tool
