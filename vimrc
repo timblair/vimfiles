@@ -22,6 +22,7 @@ Plug 'chriskempson/base16-vim'  " colour scheme
 Plug 'scrooloose/nerdcommenter' " simple block commenting
 Plug 'scrooloose/syntastic'     " syntax checking
 Plug 'ctrlpvim/ctrlp.vim'       " file finding
+Plug 'majutsushi/tagbar'        " tags sidebar
 
 Plug 'scrooloose/nerdtree',    { 'on': 'NERDTreeToggle' } " file explorer
 Plug 'godlygeek/tabular',      { 'on': 'Tabularize' }     " block alignment
