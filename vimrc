@@ -230,3 +230,6 @@ function! ErrorLocToggle()
 endfunction
 
 nmap <silent> <C-e> :call ErrorLocToggle()<CR>
+
+au BufNewFile,BufReadPost *.md set filetype=markdown
+let g:markdown_fenced_languages = ['css', 'rb=ruby', 'erb=eruby', 'ruby', 'javascript', 'js=javascript', 'json=javascript', 'sass', 'xml', 'html', 'go', 'sql']
