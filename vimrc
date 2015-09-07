@@ -88,14 +88,14 @@ set statusline=
 set statusline +=%F             " full file name and path
 set statusline +=\ [%v\,%l/%L]  " cursor column , cursor line / total lines
 
-" various GUI options
+" Assuming we're using a Powerline-supported font
+let g:airline_powerline_fonts = 1
+
+" Various GUI options
 if has('gui_running')
-  if system("uname") == "Darwin\n"
-    set guifont=Inconsolata-dz\ for\ Powerline:h12
-    let g:airline_powerline_fonts = 1
-    set guioptions-=T " remove the toolbar
-    set linespace=-2
-   endif
+  set guifont=Hack:h10
+  set guioptions-=T " remove the toolbar
+  set linespace=-2
 endif
 
 " shortcut to show invisibles (tabs, carriage returns)
