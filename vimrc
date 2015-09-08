@@ -23,6 +23,7 @@ Plug 'scrooloose/nerdcommenter' " simple block commenting
 Plug 'scrooloose/syntastic'     " syntax checking
 Plug 'ctrlpvim/ctrlp.vim'       " file finding
 Plug 'majutsushi/tagbar'        " tags sidebar
+Plug 'corylanou/vim-present'    " go-present syntax highlighting
 
 Plug 'scrooloose/nerdtree',    { 'on': 'NERDTreeToggle' } " file explorer
 Plug 'godlygeek/tabular',      { 'on': 'Tabularize' }     " block alignment
