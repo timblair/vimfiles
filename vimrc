@@ -234,3 +234,11 @@ nmap <silent> <C-e> :call ErrorLocToggle()<CR>
 
 au BufNewFile,BufReadPost *.md set filetype=markdown
 let g:markdown_fenced_languages = ['css', 'rb=ruby', 'erb=eruby', 'ruby', 'javascript', 'js=javascript', 'json=javascript', 'sass', 'xml', 'html', 'go', 'sql']
+
+let g:go_fmt_command = "goimports"
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+
+nmap <Leader>s :TagbarToggle<CR>
