@@ -34,6 +34,7 @@ augroup load_ycm  " only load YCM when entering insert mode for the first time
     autocmd!
     autocmd InsertEnter * call plug#load('YouCompleteMe')
                        \| call youcompleteme#Enable()
+                       \| autocmd! load_ycm
   endif
 augroup END
 
