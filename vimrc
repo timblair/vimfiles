@@ -59,7 +59,10 @@ let base16colorspace=256
 silent! colorscheme base16-default
 set background=dark
 " Base16 doesn't define a nice background colour for the sign column
-autocmd ColorScheme * highlight SignColumn guibg=NONE ctermbg=NONE
+augroup colour_scheme
+  autocmd!
+  autocmd ColorScheme * highlight SignColumn guibg=NONE ctermbg=NONE
+augroup END
 
 " visual indicator to keep lines short
 if exists('+colorcolumn')
@@ -125,27 +128,37 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " Specific indentation settings for ColdFusion
-autocmd FileType cf set ai sw=4 ts=4 sts=4 noet
+augroup cf_indentation
+  autocmd!
+  autocmd FileType cf set ai sw=4 ts=4 sts=4 noet
+augroup END
 
 " Turn off auto-commenting (i.e. type a comment, press return, the new line is
 " no longer automatically commented)
-autocmd FileType * setlocal formatoptions-=ro
+augroup auto_commenting
+  autocmd!
+  autocmd FileType * setlocal formatoptions-=ro
+augroup END
 
 " NERDTree
 map <C-n> :NERDTreeToggle <CR>
 let NERDTreeHijackNetrw=1 " Use instead of Netrw when doing an edit /foobar
 let NERDTreeMouseMode=1 " Single click for everything
-" Open NERDTree by default if no files are specified
-autocmd StdinReadPre * let s:std_in=1
 function! StartNERDTree()
   if argc() == 0 && !exists("s:std_in")
     execute ":NERDTree"
     wincmd p
   endif
 endfunction
-autocmd VimEnter * :call StartNERDTree()
-" Close vim if NERDTree is the only window left open
-autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+augroup nerdtree
+  autocmd!
+" Open NERDTree by default if no files are specified
+  autocmd StdinReadPre * let s:std_in=1
+  autocmd VimEnter * :call StartNERDTree()
+  " Close vim if NERDTree is the only window left open
+  autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+augroup END
 
 " Fullscreening
 if has("gui_running")
@@ -159,7 +172,10 @@ vmap <Leader>g :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'
 " Open .vimrc for editing in a new tab
 nmap <leader>v :tabedit $MYVIMRC<CR>
 " Source the vimrc file after saving it
-autocmd bufwritepost vimrc source $MYVIMRC
+augroup resource_vimrc
+  autocmd!
+  autocmd bufwritepost vimrc source $MYVIMRC
+augroup END
 
 " Tabularize shortcuts
 nmap <Leader>a= :Tabularize /\zs[=<>/!]\@<!=[=<>/!]\@!.*/<CR>
