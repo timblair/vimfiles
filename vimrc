@@ -128,9 +128,9 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " Specific indentation settings for ColdFusion
-augroup cf_indentation
+augroup tabbed_indentation
   autocmd!
-  autocmd FileType cf set ai sw=4 ts=4 sts=4 noet
+  autocmd FileType cf,go set ai sw=4 ts=4 sts=4 noet
 augroup END
 
 " Turn off auto-commenting (i.e. type a comment, press return, the new line is
