@@ -49,6 +49,7 @@ set cursorline
 set nowrap
 set visualbell
 set number
+set title
 
 " No path munging for crontabs
 au FileType crontab set nobackup nowritebackup
