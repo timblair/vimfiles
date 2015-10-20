@@ -128,10 +128,11 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" Specific indentation settings for ColdFusion
-augroup tabbed_indentation
+" Specific indentation settings different filetypes
+augroup indentation
   autocmd!
   autocmd FileType cf,go set ai sw=4 ts=4 sts=4 noet
+  autocmd FileType markdown set ai sw=4 ts=4 sts=4
 augroup END
 
 " Turn off auto-commenting (i.e. type a comment, press return, the new line is
@@ -260,3 +261,4 @@ au FileType go nmap <Leader>gd <Plug>(go-doc)
 au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
 
 nmap <Leader>s :TagbarToggle<CR>
+nmap <Leader>m :!open -a Marked %<CR><CR>
