@@ -1,6 +1,6 @@
 #!/bin/bash
 
-git clone git://github.com/timblair/vimfiles.git ~/.vim
+git clone git@github.com:timblair/vimfiles.git ~/.vim
 ln -s ~/.vim/vimrc ~/.vimrc && cd ~/.vim
 
 if [[ $(uname) == 'Darwin' ]]; then
