@@ -261,4 +261,4 @@ au FileType go nmap <Leader>gd <Plug>(go-doc)
 au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
 
 nmap <Leader>s :TagbarToggle<CR>
-nmap <Leader>m :!open -a Marked %<CR><CR>
+nmap <Leader>m :!open -a "Marked 2" %<CR><CR>
