@@ -17,7 +17,8 @@ Plug 'tpope/vim-endwise'        " correct insertion of 'end' block markers
 Plug 'airblade/vim-rooter'      " change working directory to project root
 Plug 'ervandew/supertab'        " use tab for all insert mode completions
 Plug 'fholgado/minibufexpl.vim' " easier buffer exploring
-Plug 'bling/vim-airline'        " better status/tabline
+Plug 'vim-airline/vim-airline'  " better status/tabline
+Plug 'vim-airline/vim-airline-themes'
 Plug 'chriskempson/base16-vim'  " colour scheme
 Plug 'scrooloose/nerdcommenter' " simple block commenting
 Plug 'scrooloose/syntastic'     " syntax checking
