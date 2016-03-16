@@ -160,7 +160,7 @@ augroup nerdtree
   autocmd StdinReadPre * let s:std_in=1
   autocmd VimEnter * :call StartNERDTree()
   " Close vim if NERDTree is the only window left open
-  autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 augroup END
 
 " Fullscreening
