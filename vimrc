@@ -59,13 +59,7 @@ au FileType crontab set nobackup nowritebackup
 " Make sure terminal is running with modified Base16 colours:
 " https://raw.github.com/chriskempson/base16-shell/master/base16-default.dark.sh
 let base16colorspace=256
-silent! colorscheme base16-default
-set background=dark
-" Base16 doesn't define a nice background colour for the sign column
-augroup colour_scheme
-  autocmd!
-  autocmd ColorScheme * highlight SignColumn guibg=NONE ctermbg=NONE
-augroup END
+silent! colorscheme base16-default-dark
 
 " visual indicator to keep lines short
 if exists('+colorcolumn')
