@@ -9,7 +9,6 @@ Plug 'tpope/vim-rails'
 Plug 'davejlong/cf-utils.vim'
 Plug 'tpope/vim-markdown'
 Plug 'fatih/vim-go'
-Plug 'elixir-lang/vim-elixir'
 
 Plug 'tpope/vim-fugitive'       " all the git things
 Plug 'airblade/vim-gitgutter'   " show git diff marks in the gutter
@@ -24,7 +23,6 @@ Plug 'scrooloose/nerdcommenter' " simple block commenting
 Plug 'scrooloose/syntastic'     " syntax checking
 Plug 'ctrlpvim/ctrlp.vim'       " file finding
 Plug 'majutsushi/tagbar'        " tags sidebar
-Plug 'corylanou/vim-present'    " go-present syntax highlighting
 Plug 'junegunn/vim-peekaboo'    " register content viewer
 
 Plug 'scrooloose/nerdtree',    { 'on': 'NERDTreeToggle' } " file explorer
