@@ -228,6 +228,8 @@ nmap <Leader>w :%s/\s\+$<CR>
 " Syntastic configuration
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '!'
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_go_checkers = ['go', 'golint', 'govet']
 
 function! ErrorLocToggle()
   if exists("g:errors_win")
