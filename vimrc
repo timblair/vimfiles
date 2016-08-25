@@ -15,7 +15,6 @@ Plug 'airblade/vim-gitgutter'   " show git diff marks in the gutter
 Plug 'tpope/vim-endwise'        " correct insertion of 'end' block markers
 Plug 'airblade/vim-rooter'      " change working directory to project root
 Plug 'ervandew/supertab'        " use tab for all insert mode completions
-Plug 'fholgado/minibufexpl.vim' " easier buffer exploring
 Plug 'vim-airline/vim-airline'  " better status/tabline
 Plug 'vim-airline/vim-airline-themes'
 Plug 'chriskempson/base16-vim'  " colour scheme
